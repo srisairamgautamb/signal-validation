@@ -1,5 +1,3 @@
-"""Guards against future information leaking into the backtest."""
-
 import numpy as np
 import pandas as pd
 
@@ -13,8 +11,6 @@ def _prices(n=300, seed=0):
 
 
 def test_perfect_foresight_signal_is_not_rewarded():
-    """A signal equal to the same-day return sign must not earn an oracle Sharpe
-    once the backtester applies its one-step lag."""
     close = _prices()
     cheating = np.sign(close.pct_change()).fillna(0.0)
     res = run(close, cheating, cost_bps=0.0)

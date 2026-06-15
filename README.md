@@ -41,13 +41,19 @@ tests/
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-pytest tests/
-python -m signalval.backtest
+pip install -e ".[dev]"
+pytest
+python scripts/run_study.py
 ```
+
+## Results
+
+`results.json` holds the latest run. On SPY (2010-2024), across 37 signal variants,
+the best variant reached a net Sharpe of 0.50 but failed the Deflated Sharpe
+(p = 0.77) and PBO (0.61) checks, so no edge was claimed.
 
 ## Reporting rule
 
-A Sharpe figure leaves this repo only if it is out-of-sample, net of costs, and
-survives the deflated Sharpe and PBO checks (see HONEST_STATUS.md). Otherwise the
-honest summary is that the pipeline was built and the signals did not clear the bar.
+A Sharpe figure is reported as an edge only if it is out-of-sample, net of costs,
+and clears the Deflated Sharpe and PBO checks. Otherwise the honest summary is that
+the pipeline ran and no signal cleared the bar.

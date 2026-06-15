@@ -1,0 +1,18 @@
+{
+  "ticker": "SPY",
+  "start": "2010-01-01",
+  "end": "2024-12-31",
+  "observations": 3772,
+  "variants": 37,
+  "cost_bps": 1.0,
+  "best": {
+    "variant": "volmom_120_30",
+    "sharpe_net": 0.4966051525726756,
+    "max_drawdown": -0.2926054712041263,
+    "turnover_yr": 11.706787983405526
+  },
+  "deflated_sharpe_p": 0.7656,
+  "pbo_cscv": 0.6111,
+  "position_half_life_days": 7.76,
+  "edge_supported": false
+}

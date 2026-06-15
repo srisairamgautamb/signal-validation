@@ -1,5 +1,5 @@
-"""Candidate signals. Each returns a target position in [-1, 1] indexed like the
-input, using information up to time t only; the backtester lags it before applying."""
+"""Each signal returns a target position in [-1, 1] from data up to time t only;
+the backtester lags it by one period before applying."""
 
 from __future__ import annotations
 
